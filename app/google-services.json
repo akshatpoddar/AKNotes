@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "787372713540",
+    "firebase_url": "https://aknotes-20b4c.firebaseio.com",
+    "project_id": "aknotes-20b4c",
+    "storage_bucket": "aknotes-20b4c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:787372713540:android:9908d7b8935aa70ff3be11",
+        "android_client_info": {
+          "package_name": "com.example.aknotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "787372713540-4s7682leoke9tln09cfh2pantjghv4mu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.aknotes",
+            "certificate_hash": "1942649488dd000c678f87340a1fde555f2e098d"
+          }
+        },
+        {
+          "client_id": "787372713540-fadv2uk5bfkaoc5t5b00voeg5o8qjf8r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQ1JR0KuFIaD0VT_6jOiU9D5T2_XU2kxc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "787372713540-fadv2uk5bfkaoc5t5b00voeg5o8qjf8r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
