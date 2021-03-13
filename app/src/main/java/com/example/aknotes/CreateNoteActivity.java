@@ -1,8 +1,5 @@
 package com.example.aknotes;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
@@ -15,7 +12,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -23,7 +21,6 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -53,17 +50,9 @@ public class CreateNoteActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        listIntent = new Intent(getApplicationContext(), NoteListActivity.class);
-        listIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
-        mAuth = FirebaseAuth.getInstance();
-        String userId = mAuth.getCurrentUser().getUid();
-        db = FirebaseFirestore.getInstance();
-        ref = db.collection("users").document(userId).collection("notes");
-        createNew = (getIntent().getExtras() == null);
-        nameText = findViewById(R.id.editTitle);
-        contentText = findViewById(R.id.editContent);
-        fabSave = findViewById(R.id.fab_save);
+        init();
+        listIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
         fabSave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -195,6 +184,18 @@ public class CreateNoteActivity extends AppCompatActivity {
     private void enableInput(EditText editText){
         editText.setInputType(InputType.TYPE_TEXT_VARIATION_PERSON_NAME|InputType.TYPE_TEXT_FLAG_CAP_WORDS);
         editText.setClickable(true);
+    }
+
+    private void init(){
+        listIntent = new Intent(getApplicationContext(), NoteListActivity.class);
+        mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
+        String userId = mAuth.getCurrentUser().getUid();
+        ref = db.collection("users").document(userId).collection("notes");
+        createNew = (getIntent().getExtras() == null);
+        nameText = findViewById(R.id.editTitle);
+        contentText = findViewById(R.id.editContent);
+        fabSave = findViewById(R.id.fab_save);
     }
 
 }
